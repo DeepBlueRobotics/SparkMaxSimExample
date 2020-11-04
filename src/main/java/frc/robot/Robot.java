@@ -8,48 +8,32 @@
 package frc.robot;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.controller.RamseteController;
-import edu.wpi.first.wpilibj.trajectory.Trajectory;
-import edu.wpi.first.wpilibj.trajectory.TrajectoryUtil;
-import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
-import edu.wpi.first.wpilibj2.command.RamseteCommand;
-import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.subsystems.Drivetrain;
 
 public class Robot extends TimedRobot {
-  private RobotContainer robotContainer;
   private com.cyberbotics.webots.controller.Robot robot;
   private int timeStep;
-  private SequentialCommandGroup fullRoutine;
 
   @Override
   public void robotInit() {
     robot = new com.cyberbotics.webots.controller.Robot();
-    robotContainer = new RobotContainer(robot);
     timeStep = (int) Math.round(robot.getBasicTimeStep());
     // Make sure to remove the robot when the WPIlib simulation ends
     Runtime.getRuntime().addShutdownHook(new Thread(robot::delete));
 
-    // Load a path to follow and create a RamseteCommand for that path
-    try {
-      String trajectoryName = "Bruh";
-      Path pathToTrajectoryJson = Paths.get(System.getProperty("user.dir") + "/Pathweaver/output/" + trajectoryName + ".wpilib.json");
-      Trajectory trajectory = TrajectoryUtil.fromPathweaverJson(pathToTrajectoryJson);
-      Drivetrain dt = robotContainer.getDrivetrain();
-      
-      RamseteCommand followPath = new RamseteCommand(trajectory, dt::getPose, new RamseteController(), dt.getKinematics(), dt::tankDriveDirect, dt);
-      InstantCommand loadOdometry = new InstantCommand(() -> dt.loadOdometry(trajectory.getInitialPose(), dt.getHeading()));
-      fullRoutine = loadOdometry.andThen(followPath, new InstantCommand(() -> dt.tankDrive(0, 0), dt));
-    } catch (IOException io) {
-      io.printStackTrace();
-      fullRoutine = null;
-    }
+    /*
+    If you want to connect your PWM motors to Webots, you should add this line for EACH motor controller:
+
+    new PWMSim(<MOTOR PORT NUMBER>).registerSpeedCallback(<YOUR NOTIFY CALLBACK OBJECT>, true);
+
+    NOTE: In the future, most of the registration of callback methods for motor controllers, gyros, encoders, etc. will be handled
+    automatically every time you initialize a new motor controller or sensor.
+    But for now, you NEED to add this line for your wpilib motors to talk to your webots motors.
+
+    For more information look at this repo's master branch.
+    */
   }
 
   @Override
@@ -68,9 +52,6 @@ public class Robot extends TimedRobot {
 
   @Override
   public void autonomousInit() {
-    if (fullRoutine != null) {
-      fullRoutine.schedule();
-    }
   }
 
   @Override
