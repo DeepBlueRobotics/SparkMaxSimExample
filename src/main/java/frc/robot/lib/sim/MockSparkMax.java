@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.Spark;
 import frc.robot.lib.Mocks;
 
 public class MockSparkMax extends CANSparkMax {
+    public static final DummySparkMaxAnswer DUMMY_AMSWER = new DummySparkMaxAnswer();
     // Assign the CAN port to a PWM port so it works with the simulator. Not a fan of this solution though
     // CAN ports should be separate from PWM ports
     private final int portPWM;
@@ -23,12 +24,12 @@ public class MockSparkMax extends CANSparkMax {
         super(portPWM, type);
         this.portPWM = portPWM;
         motorPWM = new Spark(portPWM);
-        encoder = Mocks.createMock(CANEncoder.class, new MockedSparkEncoder(this, "PWM_" + portPWM));
+        encoder = Mocks.createMock(CANEncoder.class, new MockedSparkEncoder(this, "PWM_" + portPWM), DUMMY_AMSWER);
         isInverted = false;
     }
 
     public static CANSparkMax createMockSparkMax(int portPWM, MotorType type) {
-        return Mocks.createMock(CANSparkMax.class, new MockSparkMax(portPWM, type));
+        return Mocks.createMock(CANSparkMax.class, new MockSparkMax(portPWM, type), new DummySparkMaxAnswer());
     }
 
     @Override

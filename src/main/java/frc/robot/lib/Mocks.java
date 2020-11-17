@@ -15,7 +15,7 @@ import org.mockito.stubbing.Answer;
 
 public final class Mocks {
     
-    public static final Answer<Object> returnsOriginalMethod = InvocationOnMock::callRealMethod;
+    public static final Answer<Object> RETURN_ORIGINAL_INVOCATION = InvocationOnMock::callRealMethod;
 
     /**
      * Attempts to create an instance of a class in which some or all of the classes methods are replaced with a mocked implementation
@@ -41,7 +41,7 @@ public final class Mocks {
      * @see #createMock(java.lang.Class, java.lang.Object) 
      */
     public static <T, U> T createMock(Class<T> classToMock, U implClass, Class<?>... interfaces) {
-        return createMock(classToMock, implClass, returnsOriginalMethod);
+        return createMock(classToMock, implClass, RETURN_ORIGINAL_INVOCATION);
     }
 
     /**
