@@ -15,6 +15,8 @@ import org.mockito.stubbing.Answer;
 
 public final class Mocks {
     
+    public static final Answer<Object> returnsOriginalMethod = InvocationOnMock::callRealMethod;
+
     /**
      * Attempts to create an instance of a class in which some or all of the classes methods are replaced with a mocked implementation
      * @param T the class type which will be mocked
@@ -39,6 +41,35 @@ public final class Mocks {
      * @see #createMock(java.lang.Class, java.lang.Object) 
      */
     public static <T, U> T createMock(Class<T> classToMock, U implClass, Class<?>... interfaces) {
+        return createMock(classToMock, implClass, returnsOriginalMethod);
+    }
+
+    /**
+     * Attempts to create an instance of a class in which some or all of the classes methods are replaced with a mocked implementation
+     * @param T the class type which will be mocked
+     * @param U the class type which will be used to provide method implementations
+     * @param classToMock the class type which will be mocked
+     * @param implClass the object to which to try to forward method calls
+     * @param defaultAnswer the answer to use if an overriden method cannot be found
+     * @return an instance of <code>T</code> in which some or all of the classes methods are replaced with a mocked implementation from <code>U</code>
+     * @see #createMock(java.lang.Class, java.lang.Object, java.lang.Class...) 
+     */
+    public static <T, U> T createMock(Class<T> classToMock, U implClass, Answer<?> defaultAnswer) {
+        return createMock(classToMock, implClass, defaultAnswer, new Class<?>[0]);
+    }
+    
+    /**
+     * Attempts to create an instance of a class in which some or all of the classes methods are replaced with a mocked implementation
+     * @param T the class type which will be mocked
+     * @param U the class type which will be used to provide method implementations
+     * @param classToMock the class type which will be mocked
+     * @param implClass the object to which to try to forward method calls
+     * @param defaultAnswer the answer to use if an overriden method cannot be found
+     * @param interfaces a list of interfaces which the mocked object should extend
+     * @return an instance of <code>T</code> in which some or all of the classes methods are replaced with a mocked implementation from <code>U</code>
+     * @see #createMock(java.lang.Class, java.lang.Object) 
+     */
+    public static <T, U> T createMock(Class<T> classToMock, U implClass, Answer<?> defaultAnswer, Class<?>... interfaces) {
         HashMap<Method, InvokableMethod> methods = new HashMap<>();
         for(Method m: listMethods(classToMock, interfaces)) {
             if(Modifier.isStatic(m.getModifiers()) || Modifier.isFinal(m.getModifiers())) {
@@ -58,7 +89,7 @@ public final class Mocks {
         } else {
             settings = Mockito.withSettings().extraInterfaces(interfaces);
         }
-        settings = settings.defaultAnswer(new MockAnswer<>(methods, implClass));
+        settings = settings.defaultAnswer(new MockAnswer<>(methods, implClass, defaultAnswer));
         T mock = Mockito.mock(classToMock, settings);
         return mock;
     }
@@ -75,9 +106,11 @@ public final class Mocks {
     private static final class MockAnswer<U> implements Answer<Object> {
         private final HashMap<Method, InvokableMethod> methods;
         private final U impl;
-        MockAnswer(HashMap<Method, InvokableMethod> methods, U impl) {
+        private final Answer<?> defaultAnswer;
+        MockAnswer(HashMap<Method, InvokableMethod> methods, U impl, Answer<?> defaultAnswer) {
             this.methods = methods;
             this.impl = impl;
+            this.defaultAnswer = defaultAnswer;
         }
         @Override
         public Object answer(InvocationOnMock invocation) throws Throwable {
@@ -88,7 +121,7 @@ public final class Mocks {
                     throw e.getTargetException();
                 }
             }
-            return invocation.callRealMethod();
+            return defaultAnswer.answer(invocation);
         }
     }
 
