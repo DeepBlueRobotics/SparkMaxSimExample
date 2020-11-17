@@ -13,6 +13,6 @@ public class MockTalonSRX extends MockPhoenixController {
     }
 
     public static WPI_TalonSRX createMockTalonSRX(int portPWM) {
-        return Mocks.createMock(WPI_TalonSRX.class, new MockTalonSRX(portPWM));
+        return Mocks.createMock(WPI_TalonSRX.class, new MockTalonSRX(portPWM), MockPhoenixController.DEFAULT_ANSWER);
     }
 }

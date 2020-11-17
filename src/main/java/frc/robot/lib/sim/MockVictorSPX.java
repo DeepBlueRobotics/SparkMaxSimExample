@@ -12,6 +12,6 @@ public class MockVictorSPX extends MockPhoenixController {
     }
 
     public static WPI_VictorSPX createMockVictorSPX(int portPWM) {
-        return Mocks.createMock(WPI_VictorSPX.class, new MockVictorSPX(portPWM));
+        return Mocks.createMock(WPI_VictorSPX.class, new MockVictorSPX(portPWM), MockPhoenixController.DEFAULT_ANSWER);
     }
 }
