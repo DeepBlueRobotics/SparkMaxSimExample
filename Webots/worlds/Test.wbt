@@ -34,7 +34,7 @@ Robot {
               name "Back Left Encoder"
             }
             RotationalMotor {
-              name "PWM_2"
+              name "SparkMax[2]"
               maxVelocity 87.4102
             }
           ]
@@ -71,7 +71,7 @@ Robot {
               name "Front Left Encoder"
             }
             RotationalMotor {
-              name "PWM_0"
+              name "SparkMax[0]"
               maxVelocity 87.4102
             }
           ]
@@ -105,7 +105,7 @@ Robot {
               name "Back Right Encoder"
             }
             RotationalMotor {
-              name "PWM_3"
+              name "SparkMax[3]"
               maxVelocity 87.4102
             }
           ]
@@ -139,7 +139,7 @@ Robot {
               name "Front Right Encoder"
             }
             RotationalMotor {
-              name "PWM_1"
+              name "SparkMax[1]"
               maxVelocity 87.4102
             }
           ]
