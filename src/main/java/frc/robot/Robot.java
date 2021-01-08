@@ -9,16 +9,9 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.lib.sim.Simulation;
 
 public class Robot extends TimedRobot {
   private RobotContainer robotContainer;
-
-  @Override
-  public void simulationInit() {
-    SimConfig.initConfig();
-    Simulation.startSimulation();
-  }
 
   @Override
   public void robotInit() {

@@ -8,11 +8,4 @@
 package frc.robot;
 
 public final class Constants {
-    public static final double motorGearing = 6.8;
-    // Max speed of a NEO in rad/s. Used for specifying motor velocity in Webots
-    public static final double neoMotorConstant = (5676 / motorGearing) * (Math.PI * 2) / 60.;
-    public static final double wheelDiameter = 5 * 0.0254;
-    public static final double maxSpeed = neoMotorConstant * wheelDiameter / 2;
-    public static final double wheelBase = 0.46101;
-    public static final double trackWidth = 0.45085;
 }
