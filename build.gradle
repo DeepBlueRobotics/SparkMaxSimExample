@@ -1,6 +1,6 @@
 plugins {
     id "java"
-    id "edu.wpi.first.GradleRIO" version "2021.1.1-beta-4"
+    id "edu.wpi.first.GradleRIO" version "2021.1.2"
 }
 
 // Ensure opencv version is high enough to avoid missing libs on Mac
