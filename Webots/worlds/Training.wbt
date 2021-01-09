@@ -16,8 +16,8 @@ RectangleArena {
   floorTileSize 20 20
 }
 Robot {
-  translation -2.117237508055587e-12 0.07065492413992273 1.6108886531155762e-08
-  rotation 0.9999999973552158 7.267785200919476e-05 -2.7382634108036116e-06 9.671819832281801e-09
+  translation -2.0481104146441342e-12 0.07065506857433701 1.6107865969567077e-08
+  rotation 0.9999999981370684 6.103616518057084e-05 6.704786060608826e-07 9.645579796124481e-09
   children [
     Solid {
       children [
@@ -25,7 +25,7 @@ Robot {
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position 4.360926197640726e-11
+            position 3.3299571501293115e-11
             axis 0 0 1
             anchor 0.167 0 -0.232
           }
@@ -34,13 +34,13 @@ Robot {
               name "Front Left Encoder"
             }
             RotationalMotor {
-              name "PWM_0"
+              name "PWM[0]"
               maxVelocity 87.4102
             }
           ]
           endPoint Solid {
             translation 0.167 0 -0.232
-            rotation 1 2.884262747465716e-10 2.88425215299653e-10 1.5708
+            rotation 1 3.2688069148542187e-10 3.268794907878028e-10 1.5708
             children [
               Shape {
                 appearance PBRAppearance {
@@ -56,25 +56,25 @@ Robot {
             boundingObject USE Wheel
             physics Physics {
             }
-            linearVelocity -6.294306294674108e-12 1.1447743263747634e-06 -1.3434188676116685e-11
-            angularVelocity -2.0598918115330398e-10 6.9999456144312314e-12 1.018961886342007e-10
+            linearVelocity 6.295786258926262e-12 3.299086424547152e-07 3.5650193433295904e-13
+            angularVelocity -4.6692875283264295e-14 -6.963782187685132e-12 -1.019291983144997e-10
           }
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position 4.360448175527192e-11
+            position 3.3292730302553466e-11
             axis 0 0 1
             anchor 0 0 -0.232
           }
           device [
             RotationalMotor {
-              name "PWM_2"
+              name "PWM[2]"
               maxVelocity 87.4102
             }
           ]
           endPoint Solid {
             translation 0 0 -0.232
-            rotation 1 3.050277249329596e-10 3.050266045056217e-10 1.5708
+            rotation 1 3.4347633096187237e-10 3.4347506930517795e-10 1.5708
             children [
               Shape {
                 appearance PBRAppearance {
@@ -87,13 +87,13 @@ Robot {
             boundingObject USE Wheel
             physics Physics {
             }
-            linearVelocity -6.2951303547069035e-12 1.1447746041071323e-06 -1.3078061638388128e-11
-            angularVelocity -2.0591579473840665e-10 6.999945614210316e-12 1.0191248172866399e-10
+            linearVelocity 6.296261180112445e-12 3.299084751689915e-07 -5.515781448823897e-15
+            angularVelocity -7.965255201085055e-14 -6.963782188295819e-12 -1.0194273771192894e-10
           }
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position 4.3601892082558425e-11
+            position 3.329191698667937e-11
             axis 0 0 1
             anchor -0.167 0 -0.232
           }
@@ -102,13 +102,13 @@ Robot {
               name "Back Left Encoder"
             }
             RotationalMotor {
-              name "PWM_4"
+              name "PWM[4]"
               maxVelocity 87.4102
             }
           ]
           endPoint Solid {
             translation -0.167 0 -0.232
-            rotation 1 2.7170458896528487e-10 2.717035909404352e-10 1.5708
+            rotation 1 3.1015149349990377e-10 3.101503542519476e-10 1.5708
             children [
               Shape {
                 appearance PBRAppearance {
@@ -121,13 +121,13 @@ Robot {
             boundingObject USE Wheel
             physics Physics {
             }
-            linearVelocity -6.294428607315576e-12 1.1447748753543762e-06 -1.2723839276645889e-11
-            angularVelocity -2.0589386402112224e-10 6.999945614335159e-12 1.0189498014443489e-10
+            linearVelocity 6.295338772556169e-12 3.299083042935746e-07 -3.6842505210927103e-13
+            angularVelocity -1.3458534655689051e-13 -6.963782186216358e-12 -1.0192545700904554e-10
           }
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position 1.0261485809340026e-11
+            position -4.671292969962744e-14
             axis 0 0 1
             anchor 0.167 0 0.232
           }
@@ -136,13 +136,13 @@ Robot {
               name "Front Right Encoder"
             }
             RotationalMotor {
-              name "PWM_1"
+              name "PWM[1]"
               maxVelocity 87.4102
             }
           ]
           endPoint Solid {
             translation 0.167 0 0.232
-            rotation 1 2.1765640813694315e-11 2.176556086417824e-11 1.5708
+            rotation 1 2.6873027253514517e-11 2.6872928543554963e-11 1.5708
             children [
               Shape {
                 appearance PBRAppearance {
@@ -155,25 +155,25 @@ Robot {
             boundingObject USE Wheel
             physics Physics {
             }
-            linearVelocity -5.306817147298672e-12 1.1448697538770572e-06 -1.3434286886323714e-11
-            angularVelocity -2.0599074097035034e-10 6.999946143073629e-12 1.0174850932434077e-10
+            linearVelocity 5.287436546350439e-12 3.2990924267291063e-07 3.5689965297083323e-13
+            angularVelocity -4.119959582899148e-14 -6.963782705773473e-12 -1.0177948778187909e-10
           }
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position 4.360166522661329e-11
+            position 3.329169013073424e-11
             axis 0 0 1
             anchor 0 0 0.232
           }
           device [
             RotationalMotor {
-              name "PWM_3"
+              name "PWM[3]"
               maxVelocity 87.4102
             }
           ]
           endPoint Solid {
             translation 0 0 0.232
-            rotation 1 3.3834815779994814e-10 3.383469149800512e-10 1.5708
+            rotation 1 3.7679483547862193e-10 3.767934514364517e-10 1.5708
             children [
               Shape {
                 appearance PBRAppearance {
@@ -186,13 +186,13 @@ Robot {
             boundingObject USE Wheel
             physics Physics {
             }
-            linearVelocity -5.307116563745509e-12 1.144870032324018e-06 -1.3080180525239821e-11
-            angularVelocity -2.059652943082712e-10 6.999946142624644e-12 1.0175384160100531e-10
+            linearVelocity 5.2884872324460305e-12 3.2990907538724594e-07 -6.333016095183543e-15
+            angularVelocity -1.0437230955662983e-13 -6.963782706127472e-12 -1.0180517808579545e-10
           }
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position -1.030143415117446e-11
+            position 7.403170605269745e-15
             axis 0 0 1
             anchor -0.167 0 0.232
           }
@@ -201,13 +201,13 @@ Robot {
               name "Back Right Encoder"
             }
             RotationalMotor {
-              name "PWM_5"
+              name "PWM[5]"
               maxVelocity 87.4102
             }
           ]
           endPoint Solid {
             translation -0.167 0 0.232
-            rotation 1 1.1485345203890282e-11 1.1485303015939155e-11 1.5708
+            rotation 1 6.338329713605687e-12 6.338306431663402e-12 1.5708
             children [
               Shape {
                 appearance PBRAppearance {
@@ -220,8 +220,8 @@ Robot {
             boundingObject USE Wheel
             physics Physics {
             }
-            linearVelocity 3.84838232771976e-12 1.144870295451431e-06 -1.2723212274524775e-11
-            angularVelocity -2.0587984352697302e-10 6.99994607305346e-12 -1.048318340105883e-10
+            linearVelocity -3.711329238730592e-12 3.2990891025544045e-07 -3.691382809514484e-13
+            angularVelocity -1.5381182481076108e-13 -6.963782654040481e-12 1.0360383913155832e-10
           }
         }
         Shape {
@@ -249,6 +249,6 @@ Robot {
     mass 10
   }
   controller "WPILibWebSocketsToWebots"
-  linearVelocity -4.2648216424411256e-12 1.148528369534468e-06 -1.3061368249292495e-11
-  angularVelocity -2.059338555877361e-10 7.000552244348334e-12 -1.6645197715253944e-12
+  linearVelocity 4.286470833409485e-12 -2.8998063045568044e-10 -5.8798639818568414e-15
+  angularVelocity -1.4752595942314454e-13 -6.964388809308194e-12 1.0085673068758854e-12
 }
