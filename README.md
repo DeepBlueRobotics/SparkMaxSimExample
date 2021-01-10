@@ -22,6 +22,6 @@ To simulate a completely new robot project, follow all of the below steps. To si
 
 7. Now open up the list of VSCode commands (Ctrl + Shift + P on Windows, Cmd + Shift + P on Mac) and run "WPILib: Simulate Robot Code on Desktop". The project should build and you'll be prompted to select extensions to run. Make sure you choose the options named `halsim_gui` and `halsim_ws_server`.
 
-8. Familiarize yourself with the layout of the WPIlib simulator using this [link](https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/robot-simulation/simulation-gui.html#learning-the-layout) and add a joystick from the list of system joysticks. We do not have mocked joysticks yet, so you cannot control the robot in teleop if you do not have a USB joystick (such as a Logitech, Playstation, or Xbox controller). We currently are not mocking joysticks for non-joystick users, however, Windows users can emulate a joystick using [vJoy](http://vjoystick.sourceforge.net/site/) in combination with [UCR](https://autohotkey.com/boards/viewtopic.php?t=12249) as a short-term solution.
+8. Familiarize yourself with the layout of the WPIlib simulator using this [link](https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/robot-simulation/simulation-gui.html#learning-the-layout) and add a joystick or a keyboard from the list of system joysticks.
 
 Happy simulating!
