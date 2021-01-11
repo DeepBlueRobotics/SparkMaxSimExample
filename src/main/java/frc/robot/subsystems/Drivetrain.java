@@ -43,9 +43,6 @@ public class Drivetrain extends SubsystemBase {
         leftSlave = MotorControllerFactory.createSparkMax(Constants.CANPorts.dtBackLeft);
         rightSlave = MotorControllerFactory.createSparkMax(Constants.CANPorts.dtBackRight);
 
-        WPI_TalonSRX talon = MotorControllerFactory.createTalon(10);
-        WPI_VictorSPX victor = MotorControllerFactory.createVictor(11);
-
         leftEnc = leftMaster.getEncoder();
         rightEnc = rightMaster.getEncoder();
         differentialDrive = new DifferentialDrive(leftMaster, rightMaster);
