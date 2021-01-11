@@ -98,7 +98,6 @@ public class MotorControllerFactory {
     MotorErrors.reportError(controller.setI(0));
     MotorErrors.reportError(controller.setD(0));
     MotorErrors.reportError(controller.setFF(0));
-
     return spark;
   }
 }

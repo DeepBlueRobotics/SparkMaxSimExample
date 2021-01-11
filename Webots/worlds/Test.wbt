@@ -16,8 +16,8 @@ RectangleArena {
   floorTileSize 20 20
 }
 Robot {
-  translation -2.341445531176765e-12 0.0692960463591776 1.4603751684990586e-08
-  rotation 0.9999999977138501 6.761877971786651e-05 -2.791184368359738e-08 1.569651221124495e-08
+  translation -2.1693054077308728e-12 0.06929473891189548 1.4597477115552345e-08
+  rotation 0.9999999976797347 6.81173179794535e-05 7.495205389129735e-07 1.55812926143542e-08
   children [
     Solid {
       children [
@@ -25,7 +25,7 @@ Robot {
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position 3.332184113131792e-11
+            position 1.667027211877997e-11
             axis 0 0 1
             anchor -0.167 0 -0.232
           }
@@ -34,13 +34,13 @@ Robot {
               name "Back Left Encoder"
             }
             RotationalMotor {
-              name "PWM_2"
+              name "SparkMax[2]"
               maxVelocity 87.4102
             }
           ]
           endPoint Solid {
             translation -0.167 0 -0.232
-            rotation 1 1.9992088122702872e-10 1.999201468779763e-10 1.5708
+            rotation 1 2.249169378520777e-10 2.249161116875512e-10 1.5708
             children [
               Shape {
                 appearance PBRAppearance {
@@ -56,11 +56,13 @@ Robot {
             boundingObject USE Wheel
             physics Physics {
             }
+            linearVelocity 1.040078921951356e-11 4.874129941962212e-07 -3.343779953445585e-14
+            angularVelocity -5.273548274718835e-13 3.844834850211101e-15 -1.6392115669747345e-10
           }
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position 3.3328985993161354e-11
+            position 1.6672976088524906e-11
             axis 0 0 1
             anchor 0.167 0 -0.232
           }
@@ -69,13 +71,13 @@ Robot {
               name "Front Left Encoder"
             }
             RotationalMotor {
-              name "PWM_0"
+              name "SparkMax[0]"
               maxVelocity 87.4102
             }
           ]
           endPoint Solid {
             translation 0.167 0 -0.232
-            rotation 1 1.9996367177204513e-10 1.999629372658144e-10 1.5708
+            rotation 1 2.2496465281288832e-10 2.249638264730951e-10 1.5708
             children [
               Shape {
                 appearance PBRAppearance {
@@ -88,11 +90,13 @@ Robot {
             boundingObject USE Wheel
             physics Physics {
             }
+            linearVelocity 1.0403100892047265e-11 4.874137566743927e-07 -3.528623462619876e-14
+            angularVelocity -5.548212247449215e-13 3.844837113826661e-15 -1.6397439890758375e-10
           }
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position -1.9880764725810936e-14
+            position -1.6676778847781958e-11
             axis 0 0 1
             anchor -0.167 0 0.232
           }
@@ -101,13 +105,13 @@ Robot {
               name "Back Right Encoder"
             }
             RotationalMotor {
-              name "PWM_3"
+              name "SparkMax[3]"
               maxVelocity 87.4102
             }
           ]
           endPoint Solid {
             translation -0.167 0 0.232
-            rotation 1 1.6636062279477512e-11 1.6636001171920884e-11 1.5708
+            rotation 1 8.297672855586533e-12 8.297642376588238e-12 1.5708
             children [
               Shape {
                 appearance PBRAppearance {
@@ -120,11 +124,13 @@ Robot {
             boundingObject USE Wheel
             physics Physics {
             }
+            linearVelocity 1.0403631777155327e-11 4.874141695037857e-07 -3.454199748341307e-14
+            angularVelocity -5.493279452904891e-13 3.844836828790537e-15 -1.6397426694188024e-10
           }
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position -1.9640895964673523e-14
+            position -1.6676110401423026e-11
             axis 0 0 1
             anchor 0.167 0 0.232
           }
@@ -133,13 +139,13 @@ Robot {
               name "Front Right Encoder"
             }
             RotationalMotor {
-              name "PWM_1"
+              name "SparkMax[1]"
               maxVelocity 87.4102
             }
           ]
           endPoint Solid {
             translation 0.167 0 0.232
-            rotation 1 1.66348979090243e-11 1.6634836805744632e-11 1.5708
+            rotation 1 8.296842708312788e-12 8.296812232363785e-12 1.5708
             children [
               Shape {
                 appearance PBRAppearance {
@@ -151,6 +157,8 @@ Robot {
             boundingObject USE Wheel
             physics Physics {
             }
+            linearVelocity 1.040382956136663e-11 4.874149398794859e-07 -3.5302732306295465e-14
+            angularVelocity -5.493279452904802e-13 3.844837115919612e-15 -1.6398030486440357e-10
           }
         }
         Shape {
@@ -177,7 +185,7 @@ Robot {
     density -1
     mass 10
   }
-  controller "<extern>"
-  linearVelocity 1.824667881851062e-16 -1.0505931914908063e-05 -5.718569184507502e-11
-  angularVelocity -9.038348020364612e-10 1.3053423256360057e-15 -1.8211105666438962e-15
+  controller "WPILibWebSocketsToWebots"
+  linearVelocity 1.0382653819970986e-11 -7.844933731196616e-09 -3.4543789469686006e-14
+  angularVelocity -6.617941386361657e-13 3.842566298545698e-15 2.3522087296257404e-12
 }

@@ -19,18 +19,11 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RamseteCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.lib.sim.Simulation;
 import frc.robot.subsystems.Drivetrain;
 
 public class Robot extends TimedRobot {
   private RobotContainer robotContainer;
   private SequentialCommandGroup fullRoutine;
-
-  @Override
-  public void simulationInit() {
-    SimConfig.initConfig();
-    Simulation.startSimulation();
-  }
 
   @Override
   public void robotInit() {

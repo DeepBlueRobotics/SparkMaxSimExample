@@ -1,5 +1,7 @@
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import com.kauailabs.navx.frc.AHRS;
 import com.revrobotics.CANEncoder;
 import com.revrobotics.CANSparkMax;
@@ -10,7 +12,7 @@ import edu.wpi.first.wpilibj.geometry.Pose2d;
 import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics;
 import edu.wpi.first.wpilibj.kinematics.DifferentialDriveOdometry;
-import edu.wpi.first.wpilibj.simulation.Field2d;
+import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import frc.robot.Constants;
@@ -40,6 +42,9 @@ public class Drivetrain extends SubsystemBase {
         rightMaster = MotorControllerFactory.createSparkMax(Constants.CANPorts.dtFrontRight);
         leftSlave = MotorControllerFactory.createSparkMax(Constants.CANPorts.dtBackLeft);
         rightSlave = MotorControllerFactory.createSparkMax(Constants.CANPorts.dtBackRight);
+
+        WPI_TalonSRX talon = MotorControllerFactory.createTalon(10);
+        WPI_VictorSPX victor = MotorControllerFactory.createVictor(11);
 
         leftEnc = leftMaster.getEncoder();
         rightEnc = rightMaster.getEncoder();
